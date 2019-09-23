@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* mobile css*/
+html{
+  font-size: 10px;
+}
+body{
+  background-color: yellow;
+}
+@media screen and (min-width:50em){
+  body{
+    background-color: pink;
+  }
+}
+
+@media screen and (min-width:100em){
+  body{
+    background-color: blue;
+  }
+}
