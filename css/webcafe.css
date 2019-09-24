@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url(./fonts.css);
 *, *::before, *::after { 
   font-family: 'Spoqa Han Sans', 'Sans-serif'; 
 }
@@ -125,11 +126,56 @@ body{
     height: 100%;
   }
   /* Mobile main menu button */
+  .is-act{
+   
+  }
   .btn-menubar{
-    background: blue;
+    cursor: pointer;
+    background: transparent;
     position: absolute;
     top: 3.5em;
     right: 20px;
+    border: 0 none;
+    padding: 0;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+  }
+  .menubar{
+    cursor: pointer;
+    background: #fff;
+    width: 100%;
+    height: 25%;
+    display: block;
+    border-radius: 1em;
+    position: absolute;
+    left: 0;
+    transition: all 200ms;
+    /* transition-property: top, transform;
+    transition-duration: 2s, 2s;
+    transition-delay: 0s, 2s; */
+  }
+  .menubar-top{
+    top: 0;
+  }
+  .menubar-middle{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .menubar-bottom{
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .is-act .menubar-top{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .is-act .menubar-middle{
+    transform: translate(-100%, -50%);
+  }
+  .is-act .menubar-bottom{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
   }
   /* main menu */
   .menu{
@@ -144,6 +190,10 @@ body{
     width: 70vw;
     height: 100vh;
     padding: 1.5em 1em 1.5em 40px;
+    transition: all 600ms;
+  }
+  .is-act .menu{
+    transform: none;
   }
   .menu-list{
     margin: 1em 0;
