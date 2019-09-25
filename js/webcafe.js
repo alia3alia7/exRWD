@@ -3,9 +3,9 @@ $(document).ready(function () {
   // 뷰포트 사이즈를 최대 999px 설정하여 변수에 해당 값을 할당
   var viewport = window.matchMedia('(max-width:999px)');
   // resize 이벤트 발생 시 새로고침 실행
-  $(window).resize(function(){
-    location.reload();
-  });
+  // $(window).resize(function(){
+  //   location.reload();
+  // });
     // if 조건문으로 viewport가 모바일인지 확인 - 최대 999px일 때
     if(viewport.matches){
       // 필요한 객체를 찾아 변수에 선언

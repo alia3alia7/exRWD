@@ -1,7 +1,8 @@
 var viewport = window.matchMedia('(max-width:999px)');
-$(window).resize(function(){
-  location.reload();
-});
+
+// $(window).resize(function(){
+  // location.reload();
+// });
 var items = $('.menu-item');
 var nav = $('.navigation');
 var btn = $('.btn-menubar');

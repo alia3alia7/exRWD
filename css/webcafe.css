@@ -29,7 +29,7 @@ a{
 body{
   color: #181818;
 }
-.rwd-img{
+.responsive{
   max-width: 100%;
   height: auto;
 }
@@ -41,15 +41,6 @@ body{
 .container > *, .main-content > *{
   /* flex: 0 1 100%; */
   width: 100%;
-}
-.news{
-  background: lime;
-}
-.board{
-  background: teal;
-}
-.favorite-site{
-  background: gold;
 }
 .twitter{
   background: skyblue;
@@ -139,6 +130,58 @@ body{
   font-size: 1.5em;
   color: #abd375;
 }
+/* news */
+.news-date{
+  display: block;
+  text-align: right;
+}
+/* board */
+.board{
+  position: relative;
+}
+.board-list{
+  list-style: none;
+  padding-left: 0;
+}
+.board-list li{
+  margin: 0.5em 0;
+  display: flex;
+  align-items: center;
+}
+.board-list a{
+  width: calc(100% - 7em);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-right: auto;
+}
+.board-more{
+  position: absolute;
+  top: 1em;
+  right: 0;
+  padding: 0.5em;
+}
+.board-more::before{
+  color: hsla(110, 30%, 50%, 1);
+}
+/* favorite site */
+.favorite-site-list{
+  list-style: none;
+  counter-reset: initial;
+  padding-left: 1em;
+}
+.favorite-site-list li{
+  counter-increment: number;
+  margin: 0.85em 0;
+}
+.favorite-site-list li::before{
+  content: counter(number);
+  background: #eea60a;
+  color: #fff;
+  padding: 0 0.5em;
+  border-radius: 50%;
+}
+
 /* Mobile Style */
 @media screen and (max-width: 62.5em){
   .header{
@@ -192,9 +235,6 @@ body{
     height: 100%;
   }
   /* Mobile main menu button */
-  .is-act{
-   
-  }
   .btn-menubar{
     cursor: pointer;
     background: transparent;
@@ -245,6 +285,7 @@ body{
   }
   /* main menu */
   .menu{
+    opacity: 0;
     transform: translateX(-100%);
     list-style: none;
     background: rgba(0,0,0,0.85);
@@ -260,6 +301,8 @@ body{
   }
   .is-act .menu{
     transform: none;
+    opacity: 1;
+    
   }
   .menu-list{
     margin: 1em 0;
@@ -356,6 +399,7 @@ body{
   .favorite-site{
     width: calc(65px * 3 + 20px * 2);
     margin-left: 20px;
+    order: 1;
   }
   .twitter{
     width: calc(65px * 5 + 20px * 4);
